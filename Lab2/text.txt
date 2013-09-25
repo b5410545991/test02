@@ -1,0 +1,11 @@
+/* 
+TASK: hello 
+LANG: JAVA 
+*/  
+public class hello { 
+    //start method 
+    public static void main(String[] args) {  
+        System.out.println("Hello, world");  
+    }  
+  
+}  

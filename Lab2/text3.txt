@@ -1,0 +1,31 @@
+/* 
+TASK: sum 
+LANG: JAVA 
+*/  
+import java.util.Scanner;  
+public class summation {  
+     //start method
+     public static void main(String[] args){  
+            int sum=0;  
+            Scanner sc = new Scanner(System.in);  
+            int a = sc.nextInt();  
+            if(a>0 && a<= 1000){  
+                for(int i=1;i<=a;i++){  
+                    sum+=i;  
+                }  
+            }  
+            System.out.println(sum);  
+        }  
+}  
+
+/* 
+TASK: hello 
+LANG: JAVA 
+*/  
+public class hello {  
+    //start method
+    public static void main(String[] args) {  
+        System.out.println("Hello, world");  
+    }  
+  
+}  

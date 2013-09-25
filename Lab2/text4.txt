@@ -1,0 +1,45 @@
+/* 
+TASK: zeros 
+LANG: JAVA 
+*/  
+import java.math.BigInteger;  
+import java.util.Scanner;  
+  
+  
+public class zero {  
+//start method
+public static int numberzero(char c, String s) {  
+          
+        if(s.length()==1)  
+            if(s.charAt(0) == c){  
+                return 1;  
+            }  
+            else return 0;  
+              
+        else{   
+            if(s.charAt(s.length()-1)== c ) return 1+numberzero(c,s.substring(0,s.length()-1));  
+              
+            else  return numberzero(c,s.substring(0,s.length()-1));  
+              
+        }  
+}  
+    //start method
+    public static void main(String[] args){  
+        Scanner sc = new Scanner(System.in);  
+        int n = sc.nextInt();  
+        //long sum =1;  
+        BigInteger big = new BigInteger("1");  
+        for(int i=1;i<=n;i++){  
+            BigInteger big2 = new BigInteger(i+"");  
+            big = big.multiply(big2);  
+        }  
+        //System.out.println(sum);  
+          
+        String check = big+"";  
+          
+          
+          
+        int ans = numberzero('0',check);  
+        System.out.print(ans);  
+    }  
+}  

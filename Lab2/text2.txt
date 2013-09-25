@@ -1,0 +1,76 @@
+/* 
+TASK: palin2 
+LANG: JAVA 
+*/  
+import java.util.Scanner;  
+  
+public class palin3 {  
+  
+    /** 
+     * @param args 
+     */  
+	
+    //start method
+    public static boolean isPalindrom(String s) {  
+        int count = 0;  
+        char[] c = s.toCharArray();  
+        char[] temp1 = new char[c.length];  
+        char[] temp2 = new char[c.length];  
+        for (int i = 0; i < c.length; i++) {  
+            temp1[i] = c[i];  
+        }  
+        int j = c.length - 1;  
+        for (int i = 0; i < c.length; i++) {  
+            temp2[i] = c[j];  
+            j--;  
+        }  
+        for (int i = 0; i < temp1.length; i++) {  
+            if (temp1[i] == temp2[i])  
+                count++;  
+        }  
+  
+        if (count == temp1.length)  
+            return true;  
+        else  
+            return false;  
+    }  
+  
+    //start method
+    public static void main(String[] args) {  
+        // TODO Auto-generated method stub  
+        Scanner sc = new Scanner(System.in);  
+        int n = sc.nextInt();  
+        int i;  
+        int nless = n,nmore = n;  
+        out:  
+        for(;;){  
+        for (i = 2; i <= 10; i++) {  
+            String num = Integer.toString(n, i);  
+            // System.out.println(num);  
+            if (isPalindrom(num)) {  
+                System.out.println(n + " " + i);  
+                break out;  
+            }  
+        }  
+        nless = nless-1;  
+        for (i = 2; i <= 10; i++) {  
+            String num = Integer.toString(nless, i);  
+            // System.out.println(num);  
+            if (isPalindrom(num)) {  
+                System.out.println(nless + " " + i);  
+                break out;  
+            }  
+        }  
+        nmore = nmore+1;  
+        for (i = 2; i <= 10; i++) {  
+            String num = Integer.toString(nmore, i);  
+            // System.out.println(num);  
+            if (isPalindrom(num)) {  
+                System.out.println(nmore + " " + i);  
+                break out;  
+            }  
+        }  
+        }  
+    }  
+  
+}  
